@@ -25,7 +25,7 @@ async def emojiConverter(ctx, arg):
         if x == 'a' or x == 'b' :
             response += ':' + x.lower() + ': '
         elif x == ' ':
-            response += ' '
+            response += '   '
         else:
             response += ':regional_indicator_' + x.lower() + ': '
     await ctx.send(response)
