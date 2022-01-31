@@ -30,6 +30,13 @@ async def emojiConverter(ctx, arg):
             response += ':regional_indicator_' + x.lower() + ': '
     await ctx.send(response)
 
+# !hog command
+# Sends an hog rider gif
+# HOOOOG RIIIIIDEEEEEEEEEEEEEER
+@bot.command(name='hog', help='Sends an hog rider gif')
+async def hogRider(ctx):
+    await ctx.send('https://tenor.com/view/clash-of-clans-hog-rider-call-gif-4169590')
+
 # pls pol command
 @bot.event
 async def on_message(message):
