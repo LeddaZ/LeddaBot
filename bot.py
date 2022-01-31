@@ -42,11 +42,11 @@ async def on_message(message):
 @bot.event
 async def on_reaction_add(reaction, user):
     if reaction.message == msg and user != bot.user:
-        await msg.edit('https://i.imgur.com/HEXHJnV.png')
+        await msg.edit(content='https://i.imgur.com/HEXHJnV.png')
 
 @bot.event
 async def on_raw_reaction_remove(reaction):
-    await msg.edit('https://imgur.com/U1N67Ai.png')
+    await msg.edit(content='https://imgur.com/U1N67Ai.png')
 
 # Run the bot
 bot.run(TOKEN)
