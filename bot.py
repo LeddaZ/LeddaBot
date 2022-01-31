@@ -3,6 +3,7 @@
 # Made with Python and pycord (https://github.com/Pycord-Development/pycord)
 
 # Import required libraries
+import discord
 import os
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -29,6 +30,12 @@ async def emojiConverter(ctx, arg):
         else:
             response += ':regional_indicator_' + x.lower() + ': '
     await ctx.send(response)
+
+# pls pol command
+@bot.event
+async def on_message(message):
+    if message.content == 'pls pol':
+        await message.channel.send('https://i.imgur.com/HEXHJnV.png')
 
 # Run the bot
 bot.run(TOKEN)
