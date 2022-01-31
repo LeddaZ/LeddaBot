@@ -3,7 +3,6 @@
 # Made with Python and pycord (https://github.com/Pycord-Development/pycord)
 
 # Import required libraries
-import discord
 import os
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -35,7 +34,19 @@ async def emojiConverter(ctx, arg):
 @bot.event
 async def on_message(message):
     if message.content == 'pls pol':
-        await message.channel.send('https://i.imgur.com/HEXHJnV.png')
+        global msg
+        msg = await message.channel.send('https://imgur.com/U1N67Ai.png')
+        await msg.add_reaction("🔨")
+
+# Bonk/unbonk Pol on reaction
+@bot.event
+async def on_reaction_add(reaction, user):
+    if reaction.message == msg and user != bot.user:
+        await msg.edit('https://i.imgur.com/HEXHJnV.png')
+
+@bot.event
+async def on_raw_reaction_remove(reaction):
+    await msg.edit('https://imgur.com/U1N67Ai.png')
 
 # Run the bot
 bot.run(TOKEN)
