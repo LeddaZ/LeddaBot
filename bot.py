@@ -1,5 +1,5 @@
-# EmojiBot
-# Converts text into the regional indicator emojis
+# LeddaBot
+# Converts text into the regional indicator emojis and does other stuff
 # Made with Python and pycord (https://github.com/Pycord-Development/pycord)
 
 # Import required libraries

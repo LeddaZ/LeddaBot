@@ -1,5 +1,5 @@
-# EmojiBot
-Discord bot that replaces text in messages with regional indicator emojis
+# LeddaBot
+Discord bot that replaces text in messages with regional indicator emojis and does other stuff.
 
 ## Usage
 `!emoji string`
