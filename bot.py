@@ -38,6 +38,9 @@ async def on_message(message):
         msg = await message.channel.send('https://imgur.com/U1N67Ai.png')
         await msg.add_reaction("🔨")
 
+    # Prevents commands from being blocked
+    await bot.process_commands(message)
+
 # Bonk/unbonk Pol on reaction
 @bot.event
 async def on_reaction_add(reaction, user):
