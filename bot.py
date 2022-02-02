@@ -40,7 +40,7 @@ async def hogRider(ctx):
 # pls pol command
 @bot.event
 async def on_message(message):
-    if message.content == 'pls pol':
+    if message.content.lower() == 'pls pol':
         global msg
         msg = await message.channel.send('https://imgur.com/U1N67Ai.png')
         await msg.add_reaction("🔨")
