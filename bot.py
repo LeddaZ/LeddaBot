@@ -4,6 +4,7 @@
 
 # Import required libraries
 import os
+import time
 from discord.ext import commands
 from dotenv import load_dotenv
 
@@ -52,6 +53,8 @@ async def on_message(message):
 @bot.event
 async def on_reaction_add(reaction, user):
     if reaction.message == msg and user != bot.user:
+        await msg.edit(content='https://i.imgur.com/SU0FVDH.png')
+        time.sleep(0.4)
         await msg.edit(content='https://i.imgur.com/HEXHJnV.png')
 
 @bot.event
