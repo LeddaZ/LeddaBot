@@ -3,7 +3,9 @@
 # Made with Python and pycord (https://github.com/Pycord-Development/pycord)
 
 # Import required libraries
+import math
 import os
+from process_uptime import getuptime
 import time
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -37,6 +39,27 @@ async def emojiConverter(ctx, arg):
 @bot.command(name='hog', help='Sends an hog rider gif')
 async def hogRider(ctx):
     await ctx.send('https://tenor.com/view/clash-of-clans-hog-rider-call-gif-4169590')
+
+# !uptime command
+# Shows bot uptime
+@bot.command(name='uptime', help='Shows bot uptime')
+async def showUptime(ctx):
+    uptime = getuptime()
+    hr = 0
+    min = 0
+    times = math.trunc(getuptime()/60)
+    sec = math.trunc(getuptime()-(60*times))
+    if(uptime >= 60):
+        min = times
+    if(uptime >= 3600):
+        hr = math.trunc(uptime/3600)
+    # Aggiunge lo zero davanti a min e sec se necessario
+    if (min < 10):
+        min = "0" + str(min)
+    if (sec < 10):
+        sec = "0" + str(sec)
+    response = str(hr) + ":" + str(min) + ":" + str(sec)
+    await ctx.send(response)
 
 # pls pol command
 @bot.event

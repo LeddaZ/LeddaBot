@@ -10,6 +10,9 @@ If the string contains spaces it has to be enclosed in quotation marks, like thi
 `!emoji "string with spaces"`
 
 ### `!hog`
-`!hog`
 
 Sends an hog rider gif.
+
+### `!uptime`
+
+Shows bot uptime.
