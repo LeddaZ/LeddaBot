@@ -24,9 +24,11 @@ bot = commands.Bot(command_prefix='!')
 async def emojiConverter(ctx, arg):
     response = ''
     for x in arg:
-        # Add red emoji for A and B
-        if x == 'a' or x == 'b' :
+        # Add red emoji for A, B and O
+        if x == 'a' or x == 'b':
             response += ':' + x.lower() + ': '
+        if x == 'o':
+            response += ':o2: '
         elif x == ' ':
             response += '   '
         else:
