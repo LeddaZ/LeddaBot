@@ -27,7 +27,7 @@ async def emojiConverter(ctx, arg):
         # Add red emoji for A, B and O
         if x == 'a' or x == 'b':
             response += ':' + x.lower() + ': '
-        if x == 'o':
+        elif x == 'o':
             response += ':o2: '
         elif x == ' ':
             response += '   '
