@@ -53,7 +53,7 @@ async def showUptime(ctx):
         min = times
     if(uptime >= 3600):
         hr = math.trunc(uptime/3600)
-    # Aggiunge lo zero davanti a min e sec se necessario
+    # Adds zero to min and sec if necessary
     if (min < 10):
         min = "0" + str(min)
     if (sec < 10):
