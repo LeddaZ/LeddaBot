@@ -47,14 +47,9 @@ async def hogRider(ctx):
 @bot.command(name='uptime', help='Shows bot uptime')
 async def showUptime(ctx):
     uptime = getuptime()
-    hr = 0
-    min = 0
-    times = math.trunc(getuptime()/60)
-    sec = math.trunc(getuptime()-(60*times))
-    if(uptime >= 60):
-        min = times
-    if(uptime >= 3600):
-        hr = math.trunc(uptime/3600)
+    hr = math.floor(uptime/(60*60))
+    min = math.floor(uptime % (60*60) / 60)
+    sec = math.floor(uptime % 60)
     # Adds zero to min and sec if necessary
     if (min < 10):
         min = "0" + str(min)
