@@ -55,7 +55,7 @@ async def showUptime(ctx):
         min = "0" + str(min)
     if (sec < 10):
         sec = "0" + str(sec)
-    response = str(hr) + ":" + str(min) + ":" + str(sec)
+    response = str(hr) + ":" + str(min) + ":" + str(sec) + " (h:mm:ss)"
     await ctx.send(response)
 
 # pls pol command
