@@ -58,13 +58,20 @@ async def showUptime(ctx):
     response = str(hr) + ":" + str(min) + ":" + str(sec) + " (h:mm:ss)"
     await ctx.send(response)
 
-# pls pol command
+# Commands that detect text
 @bot.event
 async def on_message(message):
+    
+    # pls pol
     if message.content.lower() == 'pls pol':
         global msg
         msg = await message.channel.send('https://imgur.com/U1N67Ai.png')
         await msg.add_reaction("🔨")
+        
+    # Mudae claim detector
+    if "are now married!" in message.content:
+        msg = "Viva gli sposi! :champagne:"
+        await message.channel.send(msg, reference=message)
 
     # Prevents commands from being blocked
     await bot.process_commands(message)
