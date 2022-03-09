@@ -70,7 +70,7 @@ async def on_message(message):
         
     # Mudae claim detector
     if "are now married!" in message.content:
-        msg = "Viva gli sposi! :champagne:"
+        msg = ":champagne: Viva gli sposi! :champagne:"
         await message.channel.send(msg, reference=message)
 
     # Prevents commands from being blocked
