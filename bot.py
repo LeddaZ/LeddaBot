@@ -3,12 +3,13 @@
 # Made with Python and pycord (https://github.com/Pycord-Development/pycord)
 
 # Import required libraries
-import math
-import os
-from process_uptime import getuptime
-import time
 from discord.ext import commands
 from dotenv import load_dotenv
+from process_uptime import getuptime
+import math
+import os
+import random
+import time
 
 # Read bot token from .env file
 load_dotenv()
@@ -57,6 +58,13 @@ async def showUptime(ctx):
         sec = "0" + str(sec)
     response = str(hr) + ":" + str(min) + ":" + str(sec) + " (h:mm:ss)"
     await ctx.send(response)
+
+# !rand command
+# Returns a random integer between two values
+@bot.command(name='rand', help='Returns a random integer between two values')
+async def randNum(ctx, min, max):
+    num = random.randint(int(min), int(max))
+    await ctx.send(num)
 
 # Commands that detect text
 @bot.event

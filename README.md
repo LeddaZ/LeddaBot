@@ -16,3 +16,9 @@ Sends an hog rider gif.
 ### `!uptime`
 
 Shows bot uptime.
+
+### `!rand`
+
+Returns a random integer between two values. Example:
+
+`!rand 2 17`
