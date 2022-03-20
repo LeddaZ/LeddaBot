@@ -9,6 +9,7 @@ from process_uptime import getuptime
 import math
 import os
 import random
+import sys
 import time
 
 # Read bot token from .env file
@@ -63,8 +64,20 @@ async def showUptime(ctx):
 # Returns a random integer between two values
 @bot.command(name='rand', help='Returns a random integer between two values')
 async def randNum(ctx, min, max):
-    num = random.randint(int(min), int(max))
-    await ctx.send(num)
+    try:
+        msg = random.randint(int(min), int(max))
+        pass
+    except ValueError:
+        msg = "Error: one or both arguments are not integers."
+        pass
+
+    await ctx.send(msg)
+
+# Error handler for the !rand command
+@randNum.error
+async def randNum_error(ctx, error):
+    if isinstance(error, commands.errors.MissingRequiredArgument):
+        await ctx.send("Error: missing maximum number.")
 
 # Commands that detect text
 @bot.event
