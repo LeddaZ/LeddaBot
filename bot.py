@@ -33,6 +33,8 @@ async def emojiConverter(ctx, arg):
             response += ':o2: '
         elif x == ' ':
             response += '   '
+        elif not x.isalpha():
+            response += x
         else:
             response += ':regional_indicator_' + x.lower() + ': '
     await ctx.send(response)
