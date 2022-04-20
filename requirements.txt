@@ -1,4 +1,4 @@
 process-uptime==2021.1.10
 psutil==5.9.0
 py-cord==1.7.3
-python-dotenv==0.19.2
+python-dotenv==0.20.0
