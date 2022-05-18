@@ -97,7 +97,7 @@ async def on_message(message):
         await message.channel.send(msg, reference=message)
 
     # You should keep yourself safe... NOW!
-    if "kys" in message.content:
+    if "kys" in message.content.lower():
         msg = 'https://i.kym-cdn.com/photos/images/original/002/229/998/1f4'
         await message.channel.send(msg, reference=message)
 
