@@ -96,6 +96,11 @@ async def on_message(message):
         msg = ":champagne: Viva gli sposi! :champagne:"
         await message.channel.send(msg, reference=message)
 
+    # You should keep yourself safe... NOW!
+    if "kys" in message.content:
+        msg = 'https://i.kym-cdn.com/photos/images/original/002/229/998/1f4'
+        await message.channel.send(msg, reference=message)
+
     # Prevents commands from being blocked
     await bot.process_commands(message)
 
