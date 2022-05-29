@@ -22,3 +22,7 @@ Shows bot uptime.
 Returns a random integer between two values. Example:
 
 `!rand 2 17`
+
+### `!yn`
+
+Returns yes or no.

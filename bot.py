@@ -75,6 +75,18 @@ async def randNum(ctx, min, max):
 
     await ctx.send(msg)
 
+# !yn command
+# Returns yes or no
+@bot.command(name='yn', help='Returns yes or no')
+async def yesNo(ctx):
+    n = random.randint(0, 1)
+    if (n == 0):
+        msg = "No"
+    else:
+        msg = "Yes"
+
+    await ctx.send(msg)
+
 # Error handler for the !rand command
 @randNum.error
 async def randNum_error(ctx, error):
