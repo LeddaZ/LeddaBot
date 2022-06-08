@@ -26,3 +26,7 @@ Returns a random integer between two values. Example:
 ### `!yn`
 
 Returns yes or no.
+
+### `!info`
+
+Shows bot info.

@@ -6,10 +6,11 @@
 from discord.ext import commands
 from dotenv import load_dotenv
 from process_uptime import getuptime
+import git
 import math
 import os
+import psutil
 import random
-import sys
 import time
 
 # Read bot token from .env file
@@ -86,6 +87,20 @@ async def yesNo(ctx):
         msg = "Yes"
 
     await ctx.send(msg)
+
+# !info command
+# Shows bot info
+@bot.command(name='info', help='Shows bot info')
+async def botInfo(ctx):
+    # Memory usage
+    process = psutil.Process()
+    mem = str(round(process.memory_info().vms/1024/1024, 2))
+
+    # Commit hash
+    repo = git.Repo(search_parent_directories=True)
+    sha = repo.head.object.hexsha
+
+    await ctx.send("**LeddaBot**\nCommit `" + sha[0:8] + "`\nMemory usage: " + mem + " MB\nSource: https://github.com/LeddaZ/LeddaBot")
 
 # Error handler for the !rand command
 @randNum.error
