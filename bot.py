@@ -128,6 +128,11 @@ async def on_message(message):
         msg = 'https://i.kym-cdn.com/photos/images/original/002/229/998/1f4'
         await message.channel.send(msg, reference=message)
 
+    # stocazzo
+    if "stocazzo" in message.content.lower():
+        msg = 'OOOOOOOOOOOOOOOOOOOOOOOOO'
+        await message.channel.send(msg, reference=message)
+
     # Prevents commands from being blocked
     await bot.process_commands(message)
 
